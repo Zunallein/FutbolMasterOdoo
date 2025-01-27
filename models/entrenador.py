@@ -9,6 +9,18 @@ class Entrenador(models.Model):
     _name = 'futbol_master.entrenador'
     _description = 'Entrenador'
 
-    #equipos = fields.Many2one(comodel_name="futbol_master.equipo",string="Equipos")
+    equipos = fields.Many2one(comodel_name="futbol_master.equipo",string="Equipos")
     anio_experiencia = fields.Integer(string="Años de experiencia")
+    partidos_ganados = fields.Integer(string="Partidos ganados")
+    partidos_perdidos = fields.Integer(string="Partidos perdidos")
     calificacion_promedio = fields.Integer(string="Calificación promedio")
+
+    @api.depends('equipos')
+    def _calcular_promedio(self):
+        total_partidos += self.partidos_ganados + self.partidos_perdidos
+        partidos_ganados += self.partidos_ganados
+
+        if total_partidos > 0:
+            self.calificacion_promedio = (partidos_ganados / total_partidos) * 100
+        else:
+            self.calificacion_promedio = 0
