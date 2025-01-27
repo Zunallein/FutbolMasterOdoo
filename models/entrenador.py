@@ -9,7 +9,7 @@ class Entrenador(models.Model):
     _name = 'futbol_master.entrenador'
     _description = 'Entrenador'
 
-    equipos = fields.Many2one(comodel_name="futbol_master.equipo",string="Equipos")
+    equipos = fields.One2many(comodel_name="futbol_master.equipo", inverse_name="entrenador", string="Equipos")
     anio_experiencia = fields.Integer(string="Años de experiencia")
     partidos_ganados = fields.Integer(string="Partidos ganados")
     partidos_perdidos = fields.Integer(string="Partidos perdidos")

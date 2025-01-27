@@ -13,7 +13,7 @@ class Club(models.Model):
     pais = fields.Char(string = "Pais", required = True)
     ciudad = fields.Char(string = "Ciudad", required = True)
 
-    @api.depends('fechaCreacion')
+    @api.constrains('fechaCreacion')
     def _value_pc(self):
         self.fechaCreacion = fields.Date.today()
         self.fechaCreacion = self.fechaCreacion.strftime("%d/%m/%Y")
