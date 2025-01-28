@@ -33,6 +33,6 @@
     ],
          'assets': {
     'web.assets_backend': [
-        'futbol_maste/css/style.css',
+        'FutbolMasterOdoo/css/style.css',
     ]},
 }
