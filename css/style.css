@@ -2,3 +2,7 @@
     background-color: rgb(153, 9, 45);
 }
 
+.dropdown-menu .dropdown-toggle.focus, .o-dropdown-menu .dropdown-toggle.focus, .dropdown-menu .dropdown-item.focus, .o-dropdown-menu .dropdown-item.focus{
+    color: white;
+    background-color: rgb(252, 116, 116);
+}
