@@ -13,7 +13,7 @@ class Entrenador(models.Model):
     anio_experiencia = fields.Integer(string="Años de experiencia")
     partidos_ganados = fields.Integer(string="Partidos ganados")
     partidos_perdidos = fields.Integer(string="Partidos perdidos")
-    calificacion_promedio = fields.Integer(string="Calificación promedio")
+    calificacion_promedio = fields.Integer(string="Calificación promedio", readonly=True)
 
     @api.depends('equipos')
     def _calcular_promedio(self):

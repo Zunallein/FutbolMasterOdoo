@@ -23,6 +23,7 @@
 
     # always loaded
     'data': [
+        'views/entrenador.xml',
         'views/equipo.xml',
         'views/jugador.xml'
     ],

@@ -1,0 +1,47 @@
+<odoo>
+  <data>
+    <record id="futbol_master_entrenador_tree" model="ir.ui.view">
+      <field name="name">futbol_master.entrenador.tree</field>
+      <field name="model">futbol_master.entrenador</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="nombre" />
+              <field name="pais" />
+              <field name="anio_experiencia" />
+              <field name="partidos_ganados" />
+              <field name="partidos_perdidos" />
+              <field name="calificacion_promedio" />
+          </tree>
+      </field>
+    </record>
+    <record id="futbol_master_entrenador_form" model="ir.ui.view">
+      <field name="name">futbol_master.entrenador.form</field>
+        <field name="model">futbol_master.entrenador</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                      <div class="oe_title">
+                          <h1>
+                              <field name="nombre" placeholder="Nombre del entrenador" />
+                          </h1>
+                      </div>
+                      <group name="group_left">
+                        <field name="pais"/>
+                        <field name="anio_experiencia" />
+                      </group>
+                      <group name="group_right">
+                        <field name="partidos_ganados" />
+                        <field name="partidos_perdidos" />
+                        <field name="calificacion_promedio" widget="percentage" />
+                      </group>
+                      <group name="group_bottom">
+                        <group name="group_right">
+                          <field name="equipos" />
+                        </group>
+                      </group>
+                </sheet>
+            </form>
+      </field>
+    </record>
+  </data>
+</odoo>
