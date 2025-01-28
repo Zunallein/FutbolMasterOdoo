@@ -31,4 +31,8 @@
     'demo': [
         'demo/demo.xml',
     ],
+         'assets': {
+    'web.assets_backend': [
+        'futbol_maste/css/style.css',
+    ]},
 }
