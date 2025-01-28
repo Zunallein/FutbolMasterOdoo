@@ -10,6 +10,8 @@ class Jugador(models.Model):
     _description = 'futbol_master.futbol_master'
     
     posicion = fields.Selection([("1","Portero"), ("2","Defensa"), ("3","Medio"), ("4","Delantero")],string="Posición")
+    equipo = fields.Many2many("futbol_master.equipo", string="Equipo")
+    posicion = fields.Selection([("Portero", "Portero"), ("Defensa", "Defensa"), ("Medio", "Medio"), ("Delantero", "Delantero")], string="Posición")
     numero = fields.Integer(string="Numero del jugador")
     seleccion = fields.Boolean(string="¿Pertenece a la selección?")
 

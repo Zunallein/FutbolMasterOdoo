@@ -14,7 +14,12 @@ class Partido(models.Model):
     fecha = fields.Date(string = "Fecha")
     description = fields.Text()
 
-    @api.depends('fecha')
+    @api.constrains('fecha')
     def _value_pc(self):
         self.fecha = fields.Date.today()
         self.fecha = self.fecha.strftime("%d/%m/%Y")
+
+    @api.constrains('resultadoLocal', 'resultadoVisitante')
+    def _jugarPartido(self):
+        #nada todavia
+        pass
