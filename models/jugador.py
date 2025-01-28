@@ -9,7 +9,7 @@ class Jugador(models.Model):
     _name = 'futbol_master.jugador'
     _description = 'futbol_master.futbol_master'
     
-    posicion = fields.Selection(["Portero", "Defensa", "Medio", "Delantero"],string="Posición")
+    posicion = fields.Selection([("1","Portero"), ("2","Defensa"), ("3","Medio"), ("4","Delantero")],string="Posición")
     numero = fields.Integer(string="Numero del jugador")
     seleccion = fields.Boolean(string="¿Pertenece a la selección?")
 

@@ -9,6 +9,6 @@ class Persona(models.Model):
 
     nombre = fields.Char(string="Nombre")
     edad = fields.Integer(string="Edad")
-    genero = fields.Selection(["Masculino", "Femenino"],string="Genero")
+    genero = fields.Selection([ ("1","Masculino"), ("2","Femenino")],string="Genero")
     pais = fields.Char(string="País")
 
