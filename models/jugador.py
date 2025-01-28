@@ -18,4 +18,4 @@ class Jugador(models.Model):
         if self.numero < 0:
             self.numero = 1
         elif self.numero > 99:
-            self.numero = 1
+            self.numero = 99

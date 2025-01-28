@@ -6,7 +6,8 @@
       <field name="arch" type="xml">
           <tree>
               <field name="name"/>
-              <field name="entrenador"/>
+              <field name="entrenador_id"/>
+              <field name="club_id"/>
               <field name="division"/>
               <field name="partidosGanados"/>
               <field name="partidosPerdidos" />
@@ -20,18 +21,15 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group name="group_top">
                       <div class="oe_title">
                           <h1>
-                              <div class="d-flex">        
-                                  <field name="name" placeholder="Nombre del equipo" />
-                              </div>
+                              <field name="name" placeholder="Nombre del equipo" />
                           </h1>
                       </div>
-                    </group>
                       <group name="group_left">
-                        <field name="entrenador"/>
-                        <field name="jugador"/>
+                        <field name="entrenador_id"/>
+                        <field name="club_id"/>
+                        <field name="jugadores"/>
                         <field name="division" />
                       </group>
                       <group name="group_right">
@@ -40,7 +38,7 @@
                       </group>
                       <group name="group_bottom">
                         <group name="group_right">
-                          <field name="promedioVictorias" />
+                          <field name="promedioVictorias" widget="percentage" />
                         </group>
                       </group>
                 </sheet>

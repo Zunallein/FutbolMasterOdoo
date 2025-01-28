@@ -23,16 +23,15 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        #'views/equipo.xml'
-        #'views/templates.xml',
+        'views/equipo.xml',
+        'views/jugador.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
-         'assets': {
+    'assets': {
     'web.assets_backend': [
-        'FutbolMasterOdoo/css/style.css',
+        'futbol_master/css/style.css',
     ]},
 }
