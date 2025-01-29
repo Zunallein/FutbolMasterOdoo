@@ -13,14 +13,11 @@ class Entrenador(models.Model):
     anio_experiencia = fields.Integer(string="Años de experiencia")
     partidos_ganados = fields.Integer(string="Partidos ganados")
     partidos_perdidos = fields.Integer(string="Partidos perdidos")
-    calificacion_promedio = fields.Integer(string="Calificación promedio", readonly=True)
+    calificacion_promedio = fields.Float(string="Calificación promedio", readonly=True)
 
-    @api.depends('equipos')
+    @api.onchange('partidos_ganados','partidos_perdidos')
     def _calcular_promedio(self):
-        total_partidos = self.partidos_ganados + self.partidos_perdidos
-        partidos_ganados = self.partidos_ganados
-
-        if total_partidos > 0:
-            self.calificacion_promedio = (partidos_ganados / total_partidos) * 100
+        if self.partidos_ganados + self.partidos_perdidos > 0:
+            self.calificacion_promedio = self.partidos_ganados / (self.partidos_ganados + self.partidos_perdidos)
         else:
             self.calificacion_promedio = 0
