@@ -45,5 +45,19 @@
             </form>
       </field>
     </record>
+
+    <record model="ir.actions.act_window" id="equipo_action_window">
+      <field name="name">Equipo</field>
+      <field name="res_model">futbol_master.equipo</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+              Equipo
+          </p>
+          <p>
+              Click 'Crear' para añadir nuevos equipos.
+          </p>
+      </field>
+    </record>
   </data>
 </odoo>

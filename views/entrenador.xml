@@ -43,5 +43,18 @@
             </form>
       </field>
     </record>
+    <record model="ir.actions.act_window" id="entrenador_action_window">
+      <field name="name">Entrenador</field>
+      <field name="res_model">futbol_master.entrenador</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+              Entrenador
+          </p>
+          <p>
+              Click 'Crear' para añadir nuevos entrenadores.
+          </p>
+      </field>
+    </record>
   </data>
 </odoo>
