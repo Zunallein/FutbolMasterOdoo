@@ -35,5 +35,19 @@
             </form>
       </field>
     </record>
+
+    <record model="ir.actions.act_window" id="club_action_window">
+      <field name="name">Club</field>
+      <field name="res_model">futbol_master.club</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+              Club
+          </p>
+          <p>
+              Click 'Crear' para añadir nuevos clubes.
+          </p>
+      </field>
+    </record>
   </data>
 </odoo>

@@ -39,5 +39,19 @@
             </form>
       </field>
     </record>
+
+    <record model="ir.actions.act_window" id="partido_action_window">
+      <field name="name">Partido</field>
+      <field name="res_model">futbol_master.partido</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+              Partido
+          </p>
+          <p>
+              Click 'Crear' para añadir nuevos partidos.
+          </p>
+      </field>
+    </record>
   </data>
 </odoo>

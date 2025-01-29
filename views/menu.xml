@@ -15,25 +15,23 @@
                         sequence="1"
                         action="equipo_action_window"/>
                 
-                <!--
                 <menuitem id="menu_club_template"
                         name="Club"
                         parent="menu_equipo_root"
                         sequence="2"
-                        action="poketype_action_window"/>
+                        action="club_action_window"/>
 
-                <menuitem id="menu_partidos_template"
+                <menuitem id="menu_partido_template"
                         name="Partidos"
                         parent="menu_equipo_root"
                         sequence="3"
-                        action="futbol_master_action_window"/>
+                        action="partido_action_window"/>
 
                 <menuitem id="menu_estadio_template"
                         name="Estadios"
                         parent="menu_equipo_root"
                         sequence="4"
-                        action="futbol_master_action_window"/>
-                -->
+                        action="estadio_action_window"/>
 
             <menuitem id="menu_persona_root"
                     name="Persona"

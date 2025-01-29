@@ -31,5 +31,19 @@
             </form>
       </field>
     </record>
+
+    <record model="ir.actions.act_window" id="estadio_action_window">
+      <field name="name">Estadio</field>
+      <field name="res_model">futbol_master.estadio</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+              Estadio
+          </p>
+          <p>
+              Click 'Crear' para añadir nuevos estadios.
+          </p>
+      </field>
+    </record>
   </data>
 </odoo>

@@ -23,13 +23,13 @@
 
     # always loaded
     'data': [
-        'views/menu.xml',
         'views/entrenador.xml',
         'views/equipo.xml',
         'views/jugador.xml',
         'views/club.xml',
         'views/estadio.xml',    
         'views/partido.xml',
+        'views/menu.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
