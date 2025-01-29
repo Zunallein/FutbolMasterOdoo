@@ -6,7 +6,7 @@ class Club(models.Model):
     _description = 'futbol_master.club'
 
     name = fields.Char()
-    quipo_id = fields.One2many("futbol_master.equipo", "club_id", string="Equipos")
+    equipo_id = fields.One2many("futbol_master.equipo", "club_id", string="Equipos")
     fechaCreacion = fields.Date(string="Fecha de Creacion", readonly=True)
     pais = fields.Char(string="Pais", required=True)
     ciudad = fields.Char(string="Ciudad", required=True)

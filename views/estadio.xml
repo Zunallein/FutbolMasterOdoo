@@ -1,0 +1,35 @@
+<odoo>
+  <data>
+    <record id="futbol_master_estadio_tree" model="ir.ui.view">
+      <field name="name">futbol_master.estadio.tree</field>
+      <field name="model">futbol_master.estadio</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="name"/>
+              <field name="ubicacion"/>
+              <field name="capacidad"/>
+
+          </tree>
+      </field>
+    </record>
+    <record id="futbol_master_estadio_form" model="ir.ui.view">
+      <field name="name">futbol_master.estadio.form</field>
+        <field name="model">futbol_master.estadio</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                      <div class="oe_title">
+                          <h1>
+                              <field name="name" placeholder="Nombre del estadio"/>
+                          </h1>
+                      </div>
+                      <group name="group_left">
+                        <field name="ubicacion"/>
+                        <field name="capacidad"/>
+                      </group>
+                </sheet>
+            </form>
+      </field>
+    </record>
+  </data>
+</odoo>

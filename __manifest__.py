@@ -25,7 +25,10 @@
     'data': [
         'views/entrenador.xml',
         'views/equipo.xml',
-        'views/jugador.xml'
+        'views/jugador.xml',
+        'views/club.xml',
+        'views/estadio.xml',    
+        'views/partido.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
@@ -33,6 +36,6 @@
     ],
     'assets': {
     'web.assets_backend': [
-        'FutbolMasterOdoo/css/style.css',
+        'futbol_master/css/style.css',
     ]},
 }

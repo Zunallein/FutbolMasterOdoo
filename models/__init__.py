@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import estadios, persona, partidos, entrenador, jugador, club, equipo
+from . import estadio, partido, persona, entrenador, jugador, club, equipo
