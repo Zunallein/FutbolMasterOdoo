@@ -7,7 +7,7 @@ class Equipo(models.Model):
     _description = 'futbol_master.equipo'
 
     name = fields.Char(string="Nombre", required=True)
-    entrenador_id = fields.Many2one("futbol_master.entrenador", string="Entrenador", required=True)
+    entrenador_id = fields.Many2one("futbol_master.entrenador", string="Entrenador")
     jugadores = fields.One2many("futbol_master.jugador","equipo_id", string="Jugadores", required=True)
     club_id = fields.Many2one("futbol_master.club", string="Club", required=True)
     division = fields.Selection([("1", "Primera"), ("2", "Segunda"), ("3", "Tercera")], string="Division", required=True)

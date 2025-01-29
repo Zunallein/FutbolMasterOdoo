@@ -26,7 +26,10 @@
         'views/menu.xml',
         'views/entrenador.xml',
         'views/equipo.xml',
-        'views/jugador.xml'
+        'views/jugador.xml',
+        'views/club.xml',
+        'views/estadio.xml',    
+        'views/partido.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
