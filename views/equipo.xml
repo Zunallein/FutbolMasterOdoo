@@ -30,7 +30,6 @@
                         <field name="entrenador_id"/>
                         <field name="club_id"/>
                         <field name="jugadores"/>
-                        <field name="division" />
                       </group>
                       <group name="group_right">
                         <field name="partidosGanados" />
@@ -43,6 +42,17 @@
                       </group>
                 </sheet>
             </form>
+      </field>
+    </record>
+
+    <record id="view_equipo_form_inherit" model="ir.ui.view">
+      <field name="name">futbol_master.equipo.inherit</field>
+      <field name="model">futbol_master.equipo</field>
+      <field name="inherit_id" ref="futbol_master_equipo_form"/>
+      <field name="arch" type="xml">
+          <xpath expr="//field[@name='jugadores']" position="after">
+              <field name="division"/>
+          </xpath>
       </field>
     </record>
 

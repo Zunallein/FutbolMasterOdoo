@@ -26,18 +26,16 @@
                           </h1>
                       </div>
                       <group name="group_left">
-                        <field name="pais"/>
+                        <field name="edad" />
+                        <field name="genero" />
+                        <field name="pais" />
                         <field name="anio_experiencia" />
                       </group>
                       <group name="group_right">
                         <field name="partidos_ganados" />
                         <field name="partidos_perdidos" />
                         <field name="calificacion_promedio" widget="percentage" />
-                      </group>
-                      <group name="group_bottom">
-                        <group name="group_right">
-                          <field name="equipos" />
-                        </group>
+                        <field name="equipos" />
                       </group>
                 </sheet>
             </form>
