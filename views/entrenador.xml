@@ -41,6 +41,39 @@
             </form>
       </field>
     </record>
+
+    <record id="view_futbol_master_kanban_entrenador" model="ir.ui.view">
+        <field name="name">futbol_master.entrenador.kanban</field>
+        <field name="model">futbol_master.entrenador</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="calificacion_promedio" order="calificacion_promedio asc">
+                <field name="nombre"/>
+                <field name="edad"/>
+                <field name="genero"/>
+                <field name="pais"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_card" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center;">
+                                    <div>
+                                        <strong t-esc="record.nombre.raw_value" style="font-size: 18px; display: block; margin-bottom: 5px;"/>
+                                    </div>        
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-name="kanban-empty">
+                        <div style="text-align: center; padding: 20px;">
+                            No hay entrenadores disponibles.
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="entrenador_action_window">
       <field name="name">Entrenador</field>
       <field name="res_model">futbol_master.entrenador</field>
@@ -55,38 +88,6 @@
       </field>
     </record>
 
-    <record id="view_futbol_master_kanban" model="ir.ui.view">
-        <field name="name">futbol_master.entrenador.kanban</field>
-        <field name="model">futbol_master.entrenador</field>
-        <field name="arch" type="xml">
-            <kanban default_group_by="calificacion_promedio" order="calificacion_promedio asc">
-                <field name="nombre"/>
-                <field name="edad"/>
-                <field name="genero"/>
-                <field name="pais"/>
 
-                <templates>
-                    <t t-name="kanban-box">
-                      <div class="oe_kanban_global_click">
-                        <div class="oe_kanban_details">
-                          <t t-name="kanban-box">
-                            <div class="o_kanban_card" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center;">
-                                <div>
-                                    <strong t-esc="record.nombre.raw_value" style="font-size: 18px; display: block; margin-bottom: 5px;"/>
-                                </div>        
-                            </div>
-                          </t>
-                          <t t-name="kanban-empty">
-                            <div style="text-align: center; padding: 20px;">
-                                No hay entrenadores disponibles.
-                            </div>
-                          </t>
-                        </div>
-                      </div>
-                    </t>
-                </templates>
-            </kanban>
-        </field>
-    </record>
   </data>
 </odoo>

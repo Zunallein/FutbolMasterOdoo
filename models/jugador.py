@@ -10,7 +10,7 @@ class Jugador(models.Model):
     
     posicion = fields.Selection([("1", "Portero"), ("2", "Defensa"), ("3", "Medio"), ("4", "Delantero")], string="Posición")
     equipo_id = fields.Many2one("futbol_master.equipo", string="Equipo")
-    numero = fields.Integer(string="Numero del jugador")
+    numero = fields.Integer(string="Dorsal del jugador")
     seleccion = fields.Boolean(string="¿Pertenece a la selección?")
 
     @api.onchange('numero')
