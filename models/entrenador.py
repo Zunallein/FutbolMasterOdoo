@@ -21,5 +21,3 @@ class Entrenador(models.Model):
             self.calificacion_promedio = self.partidos_ganados / (self.partidos_ganados + self.partidos_perdidos)
         else:
             self.calificacion_promedio = 0
-
-
