@@ -20,23 +20,29 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                      <div class="oe_title">
-                          <h1>
-                              <field name="name" placeholder="Nombre del entrenador" />
-                          </h1>
-                      </div>
-                      <group name="group_left">
-                        <field name="edad" />
-                        <field name="genero" />
-                        <field name="pais" />
-                        <field name="anio_experiencia" />
-                      </group>
-                      <group name="group_right">
-                        <field name="partidos_ganados" />
-                        <field name="partidos_perdidos" />
-                        <field name="calificacion_promedio" widget="percentage" />
-                        <field name="equipos" />
-                      </group>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Nombre del entrenador" />
+                        </h1>
+                    </div>
+                    <group string="Datos personales">
+                        <group name="group_left">
+                            <field name="edad" />
+                            <field name="genero" />
+                            <field name="pais" />
+                            <field name="anio_experiencia" />
+                        </group>
+                    </group>
+                    <group>
+                        <group name="stats_left" string="Estadísticas">
+                            <field name="partidos_ganados" />
+                            <field name="partidos_perdidos" />
+                            <field name="calificacion_promedio" widget="percentage" />
+                        </group>
+                        <group name="stats_right" string="Equipos">
+                            <field name="equipos" />
+                        </group>
+                    </group>
                 </sheet>
             </form>
       </field>
@@ -51,21 +57,38 @@
                 <field name="edad"/>
                 <field name="genero"/>
                 <field name="pais"/>
-
+                <field name="anio_experiencia"/>
+                <field name="partidos_ganados"/>
+                <field name="partidos_perdidos"/>
+                <field name="calificacion_promedio"/>
+                
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click">
-                            <div class="oe_kanban_details">
-                                <div class="o_kanban_card" style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center;">
-                                    <div>
-                                        <strong t-esc="record.name.raw_value" style="font-size: 18px; display: block; margin-bottom: 5px;"/>
-                                    </div>        
+                        <div class="oe_kanban_global_click o_kanban_record" style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; background-color: #f9f9f9;">
+                            <div class="o_kanban_card_content" style="text-align: center;">
+                                <strong t-esc="record.name.raw_value" style="font-size: 18px; display: block; margin-bottom: 5px;"/>
+                                <span t-esc="record.pais.value" class="badge badge-primary" style="margin-bottom: 10px;"/>
+                                <span t-esc="record.genero.value" class="badge badge-primary" style="margin-bottom: 10px;"/>
+                                <div>
+                                    <span><strong>Años de experiencia:</strong> <t t-esc="record.anio_experiencia.raw_value"/></span>
+                                </div>
+                                <div>
+                                    <span><strong>Edad:</strong> <t t-esc="record.edad.raw_value"/></span>
+                                </div>
+                                <div>
+                                    <span><strong>Partidos Ganados:</strong> <t t-esc="record.partidos_ganados.raw_value"/></span>
+                                </div>
+                                <div>
+                                    <span><strong>Partidos Perdidos:</strong> <t t-esc="record.partidos_perdidos.raw_value"/></span>
+                                </div>
+                                <div>
+                                    <span><strong>Calificación Promedio:</strong> <t t-esc="Math.round(record.calificacion_promedio.raw_value * 100) + '%'"/></span>
                                 </div>
                             </div>
                         </div>
                     </t>
                     <t t-name="kanban-empty">
-                        <div style="text-align: center; padding: 20px;">
+                        <div style="text-align: center; padding: 20px; color: #888;">
                             No hay entrenadores disponibles.
                         </div>
                     </t>
@@ -87,7 +110,5 @@
           </p>
       </field>
     </record>
-
-
   </data>
 </odoo>

@@ -8,10 +8,10 @@ class Jugador(models.Model):
     _name = 'futbol_master.jugador'
     _description = 'futbol_master.jugador'
     
-    posicion = fields.Selection([("1", "Portero"), ("2", "Defensa"), ("3", "Medio"), ("4", "Delantero")], string="Posición")
+    posicion = fields.Selection([("1", "Portero"), ("2", "Defensa"), ("3", "Medio"), ("4", "Delantero")], string="Posición",required=True)
     equipo_id = fields.Many2one("futbol_master.equipo", string="Equipo")
-    numero = fields.Integer(string="Dorsal del jugador")
-    seleccion = fields.Boolean(string="¿Pertenece a la selección?")
+    numero = fields.Integer(string="Dorsal del jugador",required=True)
+    seleccion = fields.Boolean(string="¿Pertenece a la selección")
 
     @api.onchange('numero')
     def comprobar_numero(self):
