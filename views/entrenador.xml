@@ -10,7 +10,7 @@
               <field name="anio_experiencia" />
               <field name="partidos_ganados" />
               <field name="partidos_perdidos" />
-              <field name="calificacion_promedio" />
+              <field name="calificacion_promedio" widget="percentage" />
           </tree>
       </field>
     </record>
@@ -46,7 +46,7 @@
         <field name="name">futbol_master.entrenador.kanban</field>
         <field name="model">futbol_master.entrenador</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="calificacion_promedio" order="calificacion_promedio asc">
+            <kanban default_group_by="anio_experiencia" order="anio_experiencia asc">
                 <field name="name"/>
                 <field name="edad"/>
                 <field name="genero"/>

@@ -11,7 +11,7 @@
               <field name="division"/>
               <field name="partidosGanados"/>
               <field name="partidosPerdidos" />
-              <field name="promedioVictorias" />
+              <field name="promedioVictorias" widget="percentage"/>
           </tree>
       </field>
     </record>

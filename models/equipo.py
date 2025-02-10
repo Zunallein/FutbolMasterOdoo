@@ -13,15 +13,15 @@ class Equipo(models.Model):
     division = fields.Selection([("1", "Primera"), ("2", "Segunda"), ("3", "Tercera")], string="Division", required=True)
     partidosGanados = fields.Integer(string="Partidos Ganados", required=True)
     partidosPerdidos = fields.Integer(string="Partidos Perdidos", required=True)
-    promedioVictorias = fields.Float(string="Promedio de Victorias",readonly=True)
+    promedioVictorias = fields.Float(string="Promedio de Victorias",readonly=True, compute="_calcular_promedio",store=True)
 
     @api.onchange("jugadores")
     def _value_pc(self):
         if len(self.jugadores) > 25:
             raise ValidationError("Has alcanzado el limite de jugadores")
 
-    @api.onchange("partidosGanados", "partidosPerdidos")
-    def _value_pc(self):
+    @api.depends("partidosGanados", "partidosPerdidos")
+    def _calcular_promedio(self):
         if self.partidosGanados + self.partidosPerdidos > 0:
             self.promedioVictorias = self.partidosGanados / (self.partidosGanados + self.partidosPerdidos)
         else:
