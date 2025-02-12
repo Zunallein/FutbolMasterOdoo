@@ -10,6 +10,9 @@ class Persona(models.Model):
     edad = fields.Integer(string="Edad", required=True)
     genero = fields.Selection([ ("1","Masculino"), ("2","Femenino")],string="Genero",required=True)
     pais = fields.Many2one('res.country', string="País",required=True)
+    provincia = fields.Many2one('res.country.state', string="Provincia",required=True, 
+                    domain=([('res.country.state.country_id', '=', '0')]), 
+                    attrs="{'readonly': [('pais', '=', False)]}")
 
     @api.onchange('edad')
     def comprobar_edad(self):
@@ -17,3 +20,12 @@ class Persona(models.Model):
             self.edad = 16
         elif self.edad > 100:
             self.edad = 100
+
+    @api.onchange('pais')
+    def _cambio_provincia(self):
+        self.provincia = False
+        return {
+            'domain': {
+                'provincia': [('country_id', '=', self.pais.id)]
+            }
+        }

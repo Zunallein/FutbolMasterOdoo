@@ -30,6 +30,7 @@
                             <field name="edad" />
                             <field name="genero" />
                             <field name="pais" />
+                            <field name="provincia" attrs="{'readonly': [('pais', '=', False)]}"/>
                             <field name="anio_experiencia" />
                         </group>
                     </group>

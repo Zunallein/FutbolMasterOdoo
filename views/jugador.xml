@@ -8,6 +8,7 @@
               <field name="name"/>
               <field name="edad"/>
               <field name="pais"/>
+              <field name="provincia"/>
               <field name="posicion"/>
               <field name="equipo_id"/>
               <field name="numero"/>
@@ -31,6 +32,7 @@
                             <field name="edad" />
                             <field name="genero" />
                             <field name="pais" />
+                            <field name="provincia" attrs="{'readonly': [('pais', '=', False)]}"/>
                         </group>
                     </group>
 
