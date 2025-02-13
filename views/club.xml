@@ -6,8 +6,8 @@
       <field name="arch" type="xml">
           <tree>
               <field name="name"/>
-              <field name="ciudad"/>
               <field name="pais"/>
+              <field name="provincia"/>
               <field name="fechaCreacion"/>
           </tree>
       </field>
@@ -24,8 +24,8 @@
                           </h1>
                       </div>
                       <group name="group_left">
-                        <field name="ciudad"/>
                         <field name="pais"/>
+                        <field name="provincia" attrs="{'readonly': [('pais', '=', False)]}"/>
                         <field name="fechaCreacion"/>
                       </group>
                       <group name="group_right">

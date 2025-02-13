@@ -6,7 +6,7 @@
       <field name="arch" type="xml">
           <tree>
               <field name="name"/>
-              <field name="ubicacion"/>
+              <field name="pais"/>
               <field name="capacidad"/>
 
           </tree>
@@ -24,7 +24,8 @@
                           </h1>
                       </div>
                       <group name="group_left">
-                        <field name="ubicacion"/>
+                        <field name="pais"/>
+                        <field name="provincia" attrs="{'readonly': [('pais', '=', False)]}"/>
                         <field name="capacidad"/>
                       </group>
                 </sheet>
