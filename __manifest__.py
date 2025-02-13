@@ -29,7 +29,7 @@
         'views/club.xml',
         'views/estadio.xml',    
         'views/partido.xml',
-        'views/menu.xml'
+        'views/menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
