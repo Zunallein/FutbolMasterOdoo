@@ -5,11 +5,12 @@
       <field name="model">futbol_master.partido</field>
       <field name="arch" type="xml">
           <tree>
-              <field name="nombreLocal"/>
-              <field name="resultadoLocal"/>
-              <field name="nombreVisitante"/>
-              <field name="resultadoVisitante"/>
-              <field name="fecha"/>
+            <field name="name"/>
+            <field name="nombreLocal"/>
+            <field name="resultadoLocal"/>
+            <field name="nombreVisitante"/>
+            <field name="resultadoVisitante"/>
+            <field name="fecha"/>
           </tree>
       </field>
     </record>
@@ -40,10 +41,55 @@
       </field>
     </record>
 
+    <record id="view_futbol_master_kanban_partido" model="ir.ui.view">
+      <field name="name">futbol_master.partido.kanban</field>
+      <field name="model">futbol_master.partido</field>
+      <field name="arch" type="xml">
+          <kanban>
+              <field name="nombreLocal"/>
+              <field name="resultadoLocal"/>
+              <field name="nombreVisitante"/>
+              <field name="resultadoVisitante"/>
+              <field name="estadio"/>
+              <field name="fecha"/>
+              <field name="equipos"/>
+              
+              <templates>
+                  <t t-name="kanban-box">
+                      <div class="oe_kanban_global_click o_kanban_record" style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; background-color: #f9f9f9;">
+                          <div class="o_kanban_card_content" style="text-align: center;">
+                              <div style="font-size: 14px; color: #666; margin-bottom: 10px;">
+                                  <i class="fa fa-calendar"/> <field name="fecha"/>
+                              </div>
+                              
+                              <div style="font-size: 18px; font-weight: bold; margin: 15px 0;">
+                                  <span><field name="nombreLocal"/></span>
+                                  <span style="margin: 0 15px;">
+                                      <field name="resultadoLocal"/> - <field name="resultadoVisitante"/>
+                                  </span>
+                                  <span><field name="nombreVisitante"/></span>
+                              </div>
+                              
+                              <div style="font-size: 14px; color: #666;">
+                                  <i class="fa fa-stadium"/> Estadio: <field name="estadio"/>
+                              </div>
+                          </div>
+                      </div>
+                  </t>
+                  <t t-name="kanban-empty">
+                      <div style="text-align: center; padding: 20px; color: #888;">
+                          No hay partidos disponibles.
+                      </div>
+                  </t>
+              </templates>
+          </kanban>
+      </field>
+    </record>
+
     <record model="ir.actions.act_window" id="partido_action_window">
       <field name="name">Partido</field>
       <field name="res_model">futbol_master.partido</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">kanban,tree,form</field>
       <field name="help" type="html">
           <p class="oe_view_nocontent_create">
               Partido

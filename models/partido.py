@@ -5,6 +5,7 @@ class Partido(models.Model):
     _name = 'futbol_master.partido'
     _description = 'futbol_master.partido'
 
+    name = fields.Char()
     equipos = fields.Many2many("futbol_master.equipo", string = "Equipos", required = True)
     nombreLocal = fields.Char(string = "Nombre Local")
     nombreVisitante = fields.Char(string = "Nombre Visitante")
@@ -30,8 +31,11 @@ class Partido(models.Model):
         if len(self.estadio) > 1:
             raise models.ValidationError('Solo se puede seleccionar 1 estadio')
         
-        
+    @api.constrains('fecha', 'equipos')
+    def _poner_nombre(self):
+        self.name = f"{self.fecha} {self.equipos[0].name} vs {self.equipos[1].name}"            
 
+        
     @api.constrains('resultadoLocal', 'resultadoVisitante')
     def _jugarPartido(self):
         #nada todavia
