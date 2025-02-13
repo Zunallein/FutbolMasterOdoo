@@ -63,7 +63,6 @@ class Partido(models.Model):
             elif randomVar < porcentajeVisitante:
                 visitante += 1
         
-        # Actualizamos los valores usando write() para refrescar la vista
         self.write({
             'resultadoLocal': local,
             'resultadoVisitante': visitante
