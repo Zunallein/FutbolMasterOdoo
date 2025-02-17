@@ -10,7 +10,7 @@ class Partido(models.Model):
     equipos = fields.Many2many("futbol_master.equipo", string = "Equipos", required = True)
     nombreLocal = fields.Char(string = "Nombre Local", compute="_cambiar_nombres_equipo",store=True)
     nombreVisitante = fields.Char(string = "Nombre Visitante", compute="_cambiar_nombres_equipo", store=True)
-    estadio = fields.Many2many("futbol_master.estadio", string = "Estadio", required = True)
+    estadio = fields.Many2one("futbol_master.estadio", string = "Estadio", required = True)
     resultadoLocal = fields.Integer(string = "Resultado Local")
     resultadoVisitante = fields.Integer(string = "Resultado Visitante")
     fecha = fields.Date(string = "Fecha", default=datetime.today())

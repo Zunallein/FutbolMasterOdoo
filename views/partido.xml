@@ -20,7 +20,7 @@
         <field name="model">futbol_master.partido</field>
         <field name="arch" type="xml">
             <form>
-                <header>
+                <header class="oe_button_box">
                     <button name="generar_resultado" type="object" string="Generar Resultado" class="btn-primary"/>
                 </header>
                 <sheet>
