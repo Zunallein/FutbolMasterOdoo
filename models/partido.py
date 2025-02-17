@@ -8,13 +8,21 @@ class Partido(models.Model):
 
     name = fields.Char()
     equipos = fields.Many2many("futbol_master.equipo", string = "Equipos", required = True)
-    nombreLocal = fields.Char(string = "Nombre Local")
-    nombreVisitante = fields.Char(string = "Nombre Visitante")
+    nombreLocal = fields.Char(string = "Nombre Local", compute="_cambiar_nombres_equipo",store=True)
+    nombreVisitante = fields.Char(string = "Nombre Visitante", compute="_cambiar_nombres_equipo", store=True)
     estadio = fields.Many2many("futbol_master.estadio", string = "Estadio", required = True)
     resultadoLocal = fields.Integer(string = "Resultado Local")
     resultadoVisitante = fields.Integer(string = "Resultado Visitante")
     fecha = fields.Date(string = "Fecha", default=datetime.today())
 
+    @api.depends('nombreLocal','nombreVisitante')
+    def _cambiar_nombres_equipo(self):
+        if len(self.equipos) == 2:
+            self.nombreLocal = self.equipos[0].name
+            self.nombreVisitante = self.equipos[1].name
+        else:
+            self.nombreLocal = False
+            self.nombreVisitante = False
 
     @api.onchange('equipos')
     def _max_eqipos(self):
