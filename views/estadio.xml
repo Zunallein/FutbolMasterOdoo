@@ -23,10 +23,14 @@
                               <field name="name" placeholder="Nombre del estadio"/>
                           </h1>
                       </div>
-                      <group name="group_left">
-                        <field name="pais"/>
-                        <field name="provincia" attrs="{'readonly': [('pais', '=', False)]}"/>
-                        <field name="capacidad"/>
+                       <group>
+                          <group string="Ubicación">
+                              <field name="pais"/>
+                              <field name="provincia" attrs="{'readonly': [('pais', '=', False)]}"/>
+                          </group>
+                          <group string="Características">
+                              <field name="capacidad"/>
+                          </group>
                       </group>
                 </sheet>
             </form>

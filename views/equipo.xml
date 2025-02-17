@@ -27,16 +27,16 @@
                               <field name="name" placeholder="Nombre del equipo" />
                           </h1>
                       </div>
-                      <group name="group_left">
+                      <group name="group_left" string="Información General">
                         <field name="entrenador_id"/>
                         <field name="club_id"/>
                         <field name="jugadores"/>
                       </group>
-                      <group name="group_right">
+                      <group name="group_right" string="Estadísticas de Partidos">
                         <field name="partidosGanados" />
                         <field name="partidosPerdidos" />
                       </group>
-                      <group name="group_bottom">
+                      <group name="group_bottom" string="Métricas de Rendimiento">
                         <group name="group_right">
                           <field name="promedioVictorias" widget="percentage" />
                         </group>
