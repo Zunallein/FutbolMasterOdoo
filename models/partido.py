@@ -25,7 +25,7 @@ class Partido(models.Model):
             self.nombreVisitante = False
 
     @api.onchange('equipos')
-    def _max_eqipos(self):
+    def _max_equipos(self):
         if len(self.equipos) > 2:
             raise models.ValidationError('Solo se pueden seleccionar 2 equipos')
         

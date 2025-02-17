@@ -16,7 +16,7 @@ class Equipo(models.Model):
     promedioVictorias = fields.Float(string="Promedio de Victorias",readonly=True)
 
     @api.onchange("jugadores")
-    def _value_pc(self):
+    def _maximos_jugadores(self):
         if len(self.jugadores) > 25:
             raise ValidationError("Has alcanzado el limite de jugadores")
 
